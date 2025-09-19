@@ -3,15 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Recast — Executive Click‑Through (V2, HTML+JS)</title>
-  <!-- Tailwind CDN -->
+  <title>Recast — Executive Click-Through (V2, HTML+JS)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: {} } }
   </script>
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Chart.js for the Struggle bar chart -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
     .fade { transition: opacity .25s ease, transform .25s ease; }
@@ -24,13 +21,12 @@
   </style>
 </head>
 <body class="min-h-screen bg-white text-slate-900">
-  <!-- Header -->
   <header class="relative overflow-hidden">
     <div aria-hidden class="absolute inset-0 bg-gradient-to-br from-indigo-200/80 via-sky-100/70 to-emerald-100/70"></div>
     <div class="relative mx-auto max-w-7xl px-4 pt-12 pb-10">
       <div class="fade" data-show="true">
         <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-3 py-1 text-xs tracking-wide text-slate-600">
-          Executive click‑through
+          Executive click-through
         </div>
         <h1 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
           Keep apps current, secure, and ready—without packaging.
@@ -44,7 +40,6 @@
   </header>
 
   <main class="mx-auto max-w-7xl px-4 pb-24">
-    <!-- Tabs -->
     <div class="flex items-center justify-between gap-3">
       <div role="tablist" aria-label="Demo sections" class="flex w-full flex-wrap gap-2 rounded-full bg-slate-100 p-1 ring-1 ring-slate-200">
         <button id="tab-pain" class="group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm sm:text-base bg-orange-500 text-white"><i data-lucide="alert-triangle" class="h-4 w-4"></i><span>Set the Scene</span></button>
@@ -53,13 +48,11 @@
         <button id="tab-calc" class="group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm sm:text-base text-slate-700 hover:bg-slate-100"><i data-lucide="line-chart" class="h-4 w-4"></i><span>Scale Outcome</span></button>
         <button id="tab-insight" class="group inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm sm:text-base text-slate-700 hover:bg-slate-100"><i data-lucide="rocket" class="h-4 w-4"></i><span>Spark Insight</span></button>
       </div>
-      <!-- Sticky tally -->
       <button id="btnStickyImpact" class="hidden sticky top-2 ml-auto inline-flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-105">
         Impact so far: <span id="stickyHours" class="mx-1">0</span> hrs/mo → $<span id="stickyDollars">0</span> saved
       </button>
     </div>
 
-    <!-- Metric chips row -->
     <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
       <div class="rounded-xl border border-slate-200 bg-white p-3">
         <div class="text-xs text-slate-500">Minutes saved per user / month</div>
@@ -70,16 +63,13 @@
         <div class="mt-1 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400/80 to-indigo-400/80 px-2.5 py-0.5 text-white"><i data-lucide="check-circle-2" class="h-4 w-4"></i><span id="chipPkg" class="text-sm font-semibold">—</span></div>
       </div>
       <div class="rounded-xl border border-slate-200 bg-white p-3">
-        <div class="text-xs text-slate-500">Zero‑day exposure reduced / month</div>
+        <div class="text-xs text-slate-500">Zero-day exposure reduced / month</div>
         <div class="mt-1 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400/90 to-amber-400/90 px-2.5 py-0.5 text-white"><i data-lucide="check-circle-2" class="h-4 w-4"></i><span id="chipRisk" class="text-sm font-semibold">—</span></div>
       </div>
     </div>
 
-    <!-- Panels -->
-    <!-- Slide 1: Pain -->
     <section id="panel-pain" class="fade mt-8" data-show="true">
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <!-- Left: simple unified hub viz (CSS/SVG) -->
         <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6">
           <div class="relative h-80 w-full">
             <div class="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2">
@@ -124,7 +114,6 @@
             </div>
           </div>
         </div>
-        <!-- Right: bullets -->
         <div class="rounded-2xl border border-slate-200 bg-white p-6">
           <div class="mb-3 inline-flex items-center gap-2 text-sm font-semibold text-orange-600">
             <i data-lucide="alert-triangle" class="h-4 w-4"></i> The pain
@@ -141,7 +130,7 @@
               <div class="mt-auto h-1 rounded bg-gradient-to-r from-orange-400/70 to-rose-400/70 opacity-0 transition-opacity group-hover:opacity-100"></div>
             </div>
             <div class="group flex h-full flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <div class="flex items-center gap-2"><i data-lucide="shield-check" class="h-5 w-5 text-sky-500"></i><h3 class="text-base font-semibold">Zero‑day exposure</h3></div>
+              <div class="flex items-center gap-2"><i data-lucide="shield-check" class="h-5 w-5 text-sky-500"></i><h3 class="text-base font-semibold">Zero-day exposure</h3></div>
               <p class="text-sm text-slate-600">Patching takes days, not minutes.</p>
               <div class="mt-auto h-1 rounded bg-gradient-to-r from-orange-400/70 to-rose-400/70 opacity-0 transition-opacity group-hover:opacity-100"></div>
             </div>
@@ -160,7 +149,6 @@
       </div>
     </section>
 
-    <!-- Slide 2: Struggle (Chart) -->
     <section id="panel-struggle" class="fade mt-8 hidden" data-show="false">
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div class="rounded-2xl border border-slate-200 bg-white p-6 lg:col-span-2">
@@ -168,13 +156,13 @@
           <div class="h-72 w-full"><canvas id="struggleChart"></canvas></div>
           <div class="mt-2 grid grid-cols-1 gap-1 text-xs text-slate-500 sm:grid-cols-3">
             <div class="flex items-center justify-between rounded bg-slate-50 px-2 py-1"><span>Packaging hrs/mo (typical)</span><span class="font-medium text-slate-700">50–200</span></div>
-            <div class="flex items-center justify-between rounded bg-slate-50 px-2 py-1"><span>Zero‑day lag (hrs)</span><span class="font-medium text-slate-700">24–72</span></div>
-            <div class="flex items-center justify-between rounded bg-slate-50 px-2 py-1"><span>End‑user lost mins</span><span class="font-medium text-slate-700">5–20</span></div>
+            <div class="flex items-center justify-between rounded bg-slate-50 px-2 py-1"><span>Zero-day lag (hrs)</span><span class="font-medium text-slate-700">24–72</span></div>
+            <div class="flex items-center justify-between rounded bg-slate-50 px-2 py-1"><span>End-user lost mins</span><span class="font-medium text-slate-700">5–20</span></div>
           </div>
         </div>
         <div class="rounded-2xl border border-slate-200 bg-white p-6">
           <ul class="space-y-3 text-sm text-slate-700">
-            <li class="flex items-center gap-2"><i data-lucide="timer" class="h-4 w-4"></i> Hours lost packaging and re‑packaging</li>
+            <li class="flex items-center gap-2"><i data-lucide="timer" class="h-4 w-4"></i> Hours lost packaging and re-packaging</li>
             <li class="flex items-center gap-2"><i data-lucide="shield-check" class="h-4 w-4"></i> Risk windows widen while patches wait</li>
             <li class="flex items-center gap-2"><i data-lucide="layers" class="h-4 w-4"></i> Siloed delivery paths confuse users</li>
           </ul>
@@ -185,7 +173,6 @@
       </div>
     </section>
 
-    <!-- Slide 3: Shift with Recast -->
     <section id="panel-shift" class="fade mt-8 hidden" data-show="false">
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
@@ -194,9 +181,9 @@
             <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm">
               <div class="mb-1 inline-flex items-center gap-2 text-slate-700"><i data-lucide="arrow-right-left" class="h-4 w-4"></i> Old Way</div>
               <ul class="space-y-1.5 text-slate-700">
-                <li>Package → Re‑package per version</li>
+                <li>Package → Re-package per version</li>
                 <li>Delivery silos (Local / VDI / Web)</li>
-                <li>Zero‑day: hours → days</li>
+                <li>Zero-day: hours → days</li>
               </ul>
             </div>
             <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm">
@@ -204,7 +191,7 @@
               <ul class="space-y-1.5 text-emerald-700">
                 <li>Configure once; adopt by ring</li>
                 <li>One icon; right experience automatically</li>
-                <li>Zero‑day in minutes</li>
+                <li>Zero-day in minutes</li>
               </ul>
             </div>
           </div>
@@ -212,8 +199,8 @@
         </div>
 
         <div class="rounded-2xl border border-slate-200 bg-white p-5">
-          <h3 class="text-lg font-semibold">One icon. Right experience.</h3>
-          <p class="mt-1 text-sm text-slate-600">Users click once. Workspace picks the best route automatically.</p>
+          <h3 class="text-lg font-semibold">👉 One Icon, Always the Right App</h3>
+          <p class="mt-1 text-sm text-slate-600">Users click once. Workspace chooses the right version (Windows, Mac, Web, VPN, VDI) automatically.</p>
           <div class="mt-4 grid grid-cols-3 gap-2 text-sm">
             <div>
               <div class="mb-1 text-[11px] uppercase tracking-wide text-slate-500">Location</div>
@@ -234,7 +221,7 @@
               <div class="mb-1 text-[11px] uppercase tracking-wide text-slate-500">Posture</div>
               <div class="flex flex-wrap gap-1.5">
                 <button data-posture="Compliant"     class="btn-pill pill-active">Compliant</button>
-                <button data-posture="Non‑compliant" class="btn-pill">Non‑compliant</button>
+                <button data-posture="Non-compliant" class="btn-pill">Non-compliant</button>
               </div>
             </div>
           </div>
@@ -247,7 +234,8 @@
         <div class="rounded-2xl border border-slate-200 bg-white p-5 lg:col-span-2">
           <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm">
-              <div class="font-medium">Configure—don’t package</div>
+              <div class="font-medium">👉 Update Once, Deploy Everywhere</div>
+              <p class="mt-1 text-slate-600">Package an app one time and roll it out across all environments (cloud, on-prem, hybrid) with staged rollouts.</p>
               <label class="mt-2 flex flex-col gap-1">
                 <span class="text-xs text-slate-500">Hours per package → configure</span>
                 <div class="flex items-center gap-2">
@@ -263,9 +251,10 @@
             </div>
 
             <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm">
-              <div class="flex items-center gap-2 font-medium"><i data-lucide="shield-check" class="h-4 w-4"></i> Zero‑day rollout</div>
+              <div class="flex items-center gap-2 font-medium"><i data-lucide="shield-check" class="h-4 w-4"></i> 👉 Zero-Day Patches in Hours</div>
+              <p class="mt-1 text-slate-600">Security fixes roll out in 1–2 hours instead of a full day, cutting exposure windows by 90%.</p>
               <label class="mt-2 flex flex-col gap-1">
-                <span class="text-xs text-slate-500">Current time‑to‑deploy (hrs)</span>
+                <span class="text-xs text-slate-500">Current time-to-deploy (hrs)</span>
                 <input id="inpCurrentHrs" class="w-24 rounded bg-white px-2 py-1 shadow-inner" value="24" />
               </label>
               <div class="mt-2 flex items-center justify-between rounded bg-white px-3 py-2" title="(Current − Target) × critical updates / mo">
@@ -281,10 +270,9 @@
       </div>
     </section>
 
-    <!-- Slide 4: Calculator -->
     <section id="panel-calc" class="fade mt-8 hidden" data-show="false">
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-2xl border border-slate-200 bg-white p-4"><div class="flex items-center justify-between"><div><div class="text-xs text-slate-500">Hours saved / mo</div><div id="kpiHours" class="text-xl font-semibold">0</div></div><i data-lucide="timer" class="h-5 w-5 text-orange-500"></i></div><div class="mt-1 text-xs text-slate-500">Per‑user minutes × users + packaging + zero‑day</div></div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-4"><div class="flex items-center justify-between"><div><div class="text-xs text-slate-500">Hours saved / mo</div><div id="kpiHours" class="text-xl font-semibold">0</div></div><i data-lucide="timer" class="h-5 w-5 text-orange-500"></i></div><div class="mt-1 text-xs text-slate-500">Per-user minutes × users + packaging + zero-day</div></div>
         <div class="rounded-2xl border border-slate-200 bg-white p-4"><div class="flex items-center justify-between"><div><div class="text-xs text-slate-500">$ saved / yr</div><div id="kpiYear" class="text-xl font-semibold">$0</div></div><i data-lucide="line-chart" class="h-5 w-5 text-orange-500"></i></div><div class="mt-1 text-xs text-slate-500">Illustrative only</div></div>
         <div class="rounded-2xl border border-slate-200 bg-white p-4"><div class="flex items-center justify-between"><div><div class="text-xs text-slate-500">ROI</div><div id="kpiRoi" class="text-xl font-semibold">0%</div></div><i data-lucide="bar-chart-3" class="h-5 w-5 text-orange-500"></i></div><div class="mt-1 text-xs text-slate-500">Net of subscription</div></div>
         <div class="rounded-2xl border border-slate-200 bg-white p-4"><div class="flex items-center justify-between"><div><div class="text-xs text-slate-500">Tickets / mo</div><div id="kpiTix" class="text-xl font-semibold">0</div></div><i data-lucide="rocket" class="h-5 w-5 text-orange-500"></i></div><div class="mt-1 text-xs text-slate-500">Scale context</div></div>
@@ -314,20 +302,19 @@
             <div class="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2"><span class="text-slate-600">Tickets / month (context)</span><span id="resTix" class="font-semibold text-slate-900">0</span></div>
             <div id="rowSupport" class="hidden flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2"><span class="text-slate-600">Support hours (included)</span><span id="resSupport" class="font-semibold text-slate-900">0</span></div>
           </div>
-          <button id="btnCopy" class="mt-4 inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-110"><i data-lucide="clipboard" class="h-4 w-4"></i> <span id="copyLabel">Copy executive one‑pager</span></button>
+          <button id="btnCopy" class="mt-4 inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-110"><i data-lucide="clipboard" class="h-4 w-4"></i> <span id="copyLabel">Copy executive one-pager</span></button>
           <button id="btnToInsight" class="mt-4 inline-flex items-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-105">Next: Spark Insight <i data-lucide="arrow-right" class="h-4 w-4"></i></button>
         </div>
       </div>
       <div class="text-xs text-slate-500 mt-2">Transparency: Recast AW complements device management (e.g., Intune). Windows/macOS focus. Metrics are illustrative; actuals vary.</div>
     </section>
 
-    <!-- Slide 5: Insight -->
     <section id="panel-insight" class="fade mt-8 hidden" data-show="false">
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-4">
         <div class="lg:col-span-3 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div class="rounded-2xl border border-slate-200 bg-white p-6"><div class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700"><i data-lucide="timer" class="h-4 w-4 text-emerald-600"></i> Save Time</div><div class="mt-1 text-sm text-slate-600">Hours back to IT and end‑users.</div></div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6"><div class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700"><i data-lucide="timer" class="h-4 w-4 text-emerald-600"></i> Save Time</div><div class="mt-1 text-sm text-slate-600">Hours back to IT and end-users.</div></div>
           <div class="rounded-2xl border border-slate-200 bg-white p-6"><div class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700"><i data-lucide="workflow" class="h-4 w-4 text-emerald-600"></i> Empower Users</div><div class="mt-1 text-sm text-slate-600">One icon; the right experience.</div></div>
-          <div class="rounded-2xl border border-slate-200 bg-white p-6"><div class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700"><i data-lucide="shield-check" class="h-4 w-4 text-emerald-600"></i> Reduce Risk</div><div class="mt-1 text-sm text-slate-600">Zero‑day in minutes with rings.</div></div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-6"><div class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700"><i data-lucide="shield-check" class="h-4 w-4 text-emerald-600"></i> Reduce Risk</div><div class="mt-1 text-sm text-slate-600">Zero-day in minutes with rings.</div></div>
         </div>
         <div class="rounded-2xl border border-slate-200 bg-white p-6 flex flex-col justify-between">
           <div>
@@ -336,7 +323,7 @@
           </div>
           <div class="mt-4 flex gap-2">
             <a href="#" id="ctaSchedule" class="inline-flex items-center justify-center rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-105">Schedule a walkthrough</a>
-            <a href="#" id="ctaRerun" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-110">Re‑run calculator</a>
+            <a href="#" id="ctaRerun" class="inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-110">Re-run calculator</a>
           </div>
         </div>
       </div>
@@ -344,39 +331,29 @@
   </main>
 
   <script>
-    // ---------- Icons ----------
     function refreshIcons(){ if (window.lucide) window.lucide.createIcons(); }
     refreshIcons();
 
-    // ---------- Brand helpers ----------
     const $ = (s)=>document.querySelector(s);
     const $$ = (s)=>Array.from(document.querySelectorAll(s));
     const num = (n)=> new Intl.NumberFormat().format(Math.round(Number(n)||0));
     const round = (n)=> Math.round(n*100)/100;
 
-    // ---------- State ----------
     const STATE = {
-      // tabs
       tab: 'pain',
-      // chips (null => show dash)
       chip: { minutes:null, pkg:null, risk:null },
-      // accumulated impact for calc (defaults similar to React version but rounded)
       impact: { minutes: 10, pkgHours: 100, riskHrs: 24 },
-      // assumptions
       users: 5000,
       loadedCost: 85,
       subCost: 120000,
       tixPerUser: 0.035,
       handleMins: 18,
       includeSupport: false,
-      // solution inputs
       packHrs: 8, configHrs: 2, updatesPerMonth: 32,
       currentHrs: 24, targetHrs: 2, criticalPerMonth: 1,
-      // routing picks
       location: 'Local', os:'Windows', compliant:true
     };
 
-    // ---------- Tabs ----------
     function setTab(id){
       STATE.tab = id;
       ['pain','struggle','shift','calc','insight'].forEach(t=>{
@@ -386,7 +363,7 @@
           btn.classList.toggle('bg-orange-500', active);
           btn.classList.toggle('text-white', active);
           btn.classList.toggle('text-slate-700', !active);
-          btn.classList.toggle('hover\:bg-slate-100', !active);
+          btn.classList.toggle('hover\\:bg-slate-100', !active);
         }
         const panel = $('#panel-'+t);
         if(panel){ panel.dataset.show = active? 'true':'false'; panel.classList.toggle('hidden', !active); }
@@ -395,7 +372,6 @@
       render();
     }
 
-    // ---------- Chips / Sticky ----------
     function renderChips(){
       $('#chipMinutes').textContent = STATE.chip.minutes==null? '—' : String(Math.round(STATE.chip.minutes));
       $('#chipPkg').textContent     = STATE.chip.pkg==null? '—' : String(Math.round(STATE.chip.pkg));
@@ -408,7 +384,6 @@
       $('#stickyDollars').textContent = num(dollars);
     }
 
-    // ---------- Struggle chart ----------
     let struggleChart;
     function initChart(){
       const ctx = document.getElementById('struggleChart');
@@ -416,7 +391,7 @@
       if(struggleChart) { struggleChart.destroy(); }
       struggleChart = new Chart(ctx, {
         type: 'bar',
-        data: { labels: ['Packaging hrs/mo', 'Zero‑day lag (hrs)', 'End‑user lost mins'], datasets: [{
+        data: { labels: ['Packaging hrs/mo', 'Zero-day lag (hrs)', 'End-user lost mins'], datasets: [{
           label: 'Value', data: [120, 36, 12], borderRadius: 6, backgroundColor: '#f97316' }] },
         options: { plugins:{ legend:{display:false}, tooltip:{enabled:true} },
           scales:{ x:{ ticks:{ color:'#475569', font:{size:12} } }, y:{ ticks:{ color:'#475569', font:{size:12} } } },
@@ -424,31 +399,27 @@
       });
     }
 
-    // ---------- Shift logic ----------
     function routeFromCtx(){
-      if(!STATE.compliant) return { route:'Web', reason:'Security policy: non‑compliant → Web' };
+      if(!STATE.compliant) return { route:'Web', reason:'Security policy: non-compliant → Web' };
       if(STATE.location==='Local' && STATE.os==='Windows') return { route:'Local', reason:'Fastest + compliant' };
       if(STATE.location==='VPN') return { route:'Local', reason:'On network via VPN' };
-      if(STATE.location==='Home') return { route:'VDI', reason:'Off‑network → consistent VDI' };
-      return { route:'Web', reason:'Cross‑platform access' };
+      if(STATE.location==='Home') return { route:'VDI', reason:'Off-network → consistent VDI' };
+      return { route:'Web', reason:'Cross-platform access' };
     }
 
     function renderShift(){
       const { route, reason } = routeFromCtx();
       $('#route').textContent = route;
       $('#routeReason').textContent = reason;
-      // packaging numbers
       const delta = Math.max(0, Number(STATE.packHrs)-Number(STATE.configHrs));
       const monthly = delta * STATE.updatesPerMonth;
       $('#lblDeltaPerApp').textContent = round(delta);
       $('#lblPkgMonth').textContent = num(monthly);
-      // zero-day
       const reduced = Math.max(0, (Number(STATE.currentHrs)-Number(STATE.targetHrs))*Number(STATE.criticalPerMonth));
       $('#lblZeroDayReduced').textContent = round(reduced);
       return { monthly, reduced };
     }
 
-    // ---------- Calculator ----------
     function computeOutputs(){
       const ticketsMonth = STATE.users * STATE.tixPerUser;
       const supportHours = (ticketsMonth * STATE.handleMins) / 60;
@@ -477,34 +448,25 @@
       $('#resSupport').textContent = round(o.supportHours);
     }
 
-    // ---------- Copy one-pager ----------
-    $('#btnCopy').addEventListener('click', async ()=>{
+    document.getElementById('btnCopy').addEventListener('click', async ()=>{
       const o = computeOutputs();
-      const body = `Recast Application Workspace — Executive One‑Pager (Per‑User Model)\n\nAssumptions\n - Users: ${STATE.users}\n - Tickets per user / month: ${STATE.tixPerUser}\n - Avg handle: ${STATE.handleMins} mins\n - Loaded cost: $${STATE.loadedCost}/hr\n - Subscription (annual): $${STATE.subCost}\n\nObserved demo impact (illustrative)\n - Minutes saved per user (monthly): ${STATE.impact.minutes}\n - Packaging hours avoided (org / mo): ${STATE.impact.pkgHours}\n - Zero‑day exposure reduced (hrs / mo): ${STATE.impact.riskHrs}\n\nCalculated outcomes\n - Tickets / month: ${num(o.ticketsMonth)}\n - Hours saved / month: ${round(o.totalHoursSavedMonth)}\n - $ saved / month: $${num(o.dollarSavedMonth)}\n - $ saved / year: $${num(o.dollarSavedYear)}\n - Net benefit / year: $${num(o.netBenefitYear)}\n - ROI: ${round(o.roiPct)}%\n\nNotes: All values are examples; replace with your data for accurate estimates.`;
+      const body = `Recast Application Workspace — Executive One-Pager (Per-User Model)\n\nAssumptions\n - Users: ${STATE.users}\n - Tickets per user / month: ${STATE.tixPerUser}\n - Avg handle: ${STATE.handleMins} mins\n - Loaded cost: $${STATE.loadedCost}/hr\n - Subscription (annual): $${STATE.subCost}\n\nObserved demo impact (illustrative)\n - Minutes saved per user (monthly): ${STATE.impact.minutes}\n - Packaging hours avoided (org / mo): ${STATE.impact.pkgHours}\n - Zero-day exposure reduced (hrs / mo): ${STATE.impact.riskHrs}\n\nCalculated outcomes\n - Tickets / month: ${num(o.ticketsMonth)}\n - Hours saved / month: ${round(o.totalHoursSavedMonth)}\n - $ saved / month: $${num(o.dollarSavedMonth)}\n - $ saved / year: $${num(o.dollarSavedYear)}\n - Net benefit / year: $${num(o.netBenefitYear)}\n - ROI: ${round(o.roiPct)}%\n\nNotes: All values are examples; replace with your data for accurate estimates.`;
       try{ await navigator.clipboard.writeText(body); } catch{
         const ta=document.createElement('textarea'); ta.value=body; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
       }
       const label = document.getElementById('copyLabel'); const prev=label.textContent; label.textContent='Copied!'; setTimeout(()=>label.textContent=prev,1200);
     });
 
-    // ---------- Wiring ----------
-    // Tab buttons
-    $('#tab-pain').addEventListener('click', ()=> setTab('pain'));
-    $('#tab-struggle').addEventListener('click', ()=> { setTab('struggle'); initChart(); });
-    $('#tab-shift').addEventListener('click', ()=> setTab('shift'));
-    $('#tab-calc').addEventListener('click', ()=> setTab('calc'));
-    $('#tab-insight').addEventListener('click', ()=> setTab('insight'));
+    document.getElementById('tab-pain').addEventListener('click', ()=> setTab('pain'));
+    document.getElementById('tab-struggle').addEventListener('click', ()=> { setTab('struggle'); initChart(); });
+    document.getElementById('tab-shift').addEventListener('click', ()=> setTab('shift'));
+    document.getElementById('tab-calc').addEventListener('click', ()=> setTab('calc'));
+    document.getElementById('tab-insight').addEventListener('click', ()=> setTab('insight'));
 
-    // Header quick jump
-    $('#btnPreviewCalc').addEventListener('click', ()=> setTab('calc'));
+    document.getElementById('btnPreviewCalc').addEventListener('click', ()=> setTab('calc'));
+    document.getElementById('btnShowStruggle').addEventListener('click', ()=> { setTab('struggle'); initChart(); });
+    document.getElementById('btnShowShift').addEventListener('click', ()=> setTab('shift'));
 
-    // Pain → Struggle
-    $('#btnShowStruggle').addEventListener('click', ()=> { setTab('struggle'); initChart(); });
-
-    // Struggle → Shift
-    $('#btnShowShift').addEventListener('click', ()=> setTab('shift'));
-
-    // Shift routing pills
     function updatePills(groupSel, activeAttr, val){
       $$(groupSel).forEach(b=>{
         const isActive = (b.getAttribute(activeAttr)===val);
@@ -512,7 +474,6 @@
       });
       refreshIcons();
     }
-    // pill styles
     const style = document.createElement('style');
     style.textContent = `.btn-pill{border:1px solid #e5e7eb;border-radius:9999px;padding:.25rem .75rem;font-size:.875rem;background:#fff;color:#334155}
     .btn-pill:hover{background:#f1f5f9}
@@ -521,39 +482,32 @@
 
     $$('[data-loc]').forEach(b=> b.addEventListener('click', (e)=>{ STATE.location=e.target.getAttribute('data-loc'); updatePills('[data-loc]','data-loc',STATE.location); renderShift(); }));
     $$('[data-os]').forEach(b=> b.addEventListener('click', (e)=>{ STATE.os=e.target.getAttribute('data-os'); updatePills('[data-os]','data-os',STATE.os); renderShift(); }));
-    $$('[data-posture]').forEach(b=> b.addEventListener('click', (e)=>{ STATE.compliant = e.target.getAttribute('data-posture')==='Compliant'; updatePills('[data-posture]','data-posture', STATE.compliant? 'Compliant':'Non‑compliant'); renderShift(); }));
+    $$('[data-posture]').forEach(b=> b.addEventListener('click', (e)=>{ STATE.compliant = e.target.getAttribute('data-posture')==='Compliant'; updatePills('[data-posture]','data-posture', STATE.compliant? 'Compliant':'Non-compliant'); renderShift(); }));
 
-    // Shift: inputs and add buttons
-    $('#inpPackHrs').addEventListener('input', (e)=>{ STATE.packHrs=parseFloat(e.target.value||'0'); renderShift(); });
-    $('#inpConfigHrs').addEventListener('input', (e)=>{ STATE.configHrs=parseFloat(e.target.value||'0'); renderShift(); });
-    $('#inpCurrentHrs').addEventListener('input', (e)=>{ STATE.currentHrs=parseFloat(e.target.value||'0'); renderShift(); });
+    document.getElementById('inpPackHrs').addEventListener('input', (e)=>{ STATE.packHrs=parseFloat(e.target.value||'0'); renderShift(); });
+    document.getElementById('inpConfigHrs').addEventListener('input', (e)=>{ STATE.configHrs=parseFloat(e.target.value||'0'); renderShift(); });
+    document.getElementById('inpCurrentHrs').addEventListener('input', (e)=>{ STATE.currentHrs=parseFloat(e.target.value||'0'); renderShift(); });
 
-    $('#btnAddMinutes').addEventListener('click', ()=>{ const add=2; STATE.chip.minutes = Math.round((STATE.chip.minutes||0)+add); STATE.impact.minutes += add; render(); });
-    $('#btnAddPackaging').addEventListener('click', ()=>{ const {monthly}=renderShift(); STATE.chip.pkg = Math.round((STATE.chip.pkg||0)+monthly); STATE.impact.pkgHours += monthly; render(); });
-    $('#btnAddZeroDay').addEventListener('click', ()=>{ const {reduced}=renderShift(); STATE.chip.risk = Math.round((STATE.chip.risk||0)+reduced); STATE.impact.riskHrs += reduced; render(); });
+    document.getElementById('btnAddMinutes').addEventListener('click', ()=>{ const add=2; STATE.chip.minutes = Math.round((STATE.chip.minutes||0)+add); STATE.impact.minutes += add; render(); });
+    document.getElementById('btnAddPackaging').addEventListener('click', ()=>{ const {monthly}=renderShift(); STATE.chip.pkg = Math.round((STATE.chip.pkg||0)+monthly); STATE.impact.pkgHours += monthly; render(); });
+    document.getElementById('btnAddZeroDay').addEventListener('click', ()=>{ const {reduced}=renderShift(); STATE.chip.risk = Math.round((STATE.chip.risk||0)+reduced); STATE.impact.riskHrs += reduced; render(); });
 
-    // Shift → Calc
-    $('#btnSeeCalc').addEventListener('click', ()=> setTab('calc'));
-    $('#btnStickyImpact').addEventListener('click', ()=> setTab('calc'));
+    document.getElementById('btnSeeCalc').addEventListener('click', ()=> setTab('calc'));
+    document.getElementById('btnStickyImpact').addEventListener('click', ()=> setTab('calc'));
 
-    // Calc assumptions
-    $('#inpUsers').addEventListener('input', (e)=>{ STATE.users = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); render(); });
-    $('#inpTixPerUser').addEventListener('input', (e)=>{ STATE.tixPerUser = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); renderCalc(); });
-    $('#inpHandle').addEventListener('input', (e)=>{ STATE.handleMins = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); renderCalc(); });
-    $('#inpCost').addEventListener('input', (e)=>{ STATE.loadedCost = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); render(); });
-    $('#inpSub').addEventListener('input', (e)=>{ STATE.subCost = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); renderCalc(); });
-    $('#chkSupport').addEventListener('change', (e)=>{ STATE.includeSupport = e.target.checked; renderCalc(); });
-    $('#btnReset').addEventListener('click', ()=>{ STATE.users=5000; STATE.tixPerUser=0.035; STATE.handleMins=18; STATE.loadedCost=85; STATE.subCost=120000; STATE.includeSupport=false; $('#inpUsers').value='5000'; $('#inpTixPerUser').value='0.035'; $('#inpHandle').value='18'; $('#inpCost').value='85'; $('#inpSub').value='120000'; $('#chkSupport').checked=false; renderCalc(); });
+    document.getElementById('inpUsers').addEventListener('input', (e)=>{ STATE.users = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); render(); });
+    document.getElementById('inpTixPerUser').addEventListener('input', (e)=>{ STATE.tixPerUser = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); renderCalc(); });
+    document.getElementById('inpHandle').addEventListener('input', (e)=>{ STATE.handleMins = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); renderCalc(); });
+    document.getElementById('inpCost').addEventListener('input', (e)=>{ STATE.loadedCost = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); render(); });
+    document.getElementById('inpSub').addEventListener('input', (e)=>{ STATE.subCost = Number((e.target.value||'').replace(/[^0-9.\-]/g,'')); renderCalc(); });
+    document.getElementById('chkSupport').addEventListener('change', (e)=>{ STATE.includeSupport = e.target.checked; renderCalc(); });
+    document.getElementById('btnReset').addEventListener('click', ()=>{ STATE.users=5000; STATE.tixPerUser=0.035; STATE.handleMins=18; STATE.loadedCost=85; STATE.subCost=120000; STATE.includeSupport=false; $('#inpUsers').value='5000'; $('#inpTixPerUser').value='0.035'; $('#inpHandle').value='18'; $('#inpCost').value='85'; $('#inpSub').value='120000'; $('#chkSupport').checked=false; renderCalc(); });
 
-    // Calc → Insight
-    $('#btnToInsight').addEventListener('click', ()=> setTab('insight'));
-    $('#ctaSchedule').addEventListener('click', (e)=>{ e.preventDefault(); alert('Pretend scheduling link — wire to real form or calendar.'); });
-    $('#ctaRerun').addEventListener('click', (e)=>{ e.preventDefault(); setTab('calc'); window.scrollTo({top:0, behavior:'smooth'}); });
+    document.getElementById('btnToInsight').addEventListener('click', ()=> setTab('insight'));
+    document.getElementById('ctaSchedule').addEventListener('click', (e)=>{ e.preventDefault(); alert('Pretend scheduling link — wire to real form or calendar.'); });
+    document.getElementById('ctaRerun').addEventListener('click', (e)=>{ e.preventDefault(); setTab('calc'); window.scrollTo({top:0, behavior:'smooth'}); });
 
-    // ---------- Render orchestration ----------
     function render(){ renderChips(); renderShift(); renderCalc(); refreshIcons(); }
-
-    // Initial
     render();
   </script>
 </body>
